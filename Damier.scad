@@ -1,0 +1,70 @@
+dim=10;
+hauteur=5;
+for(i=[0:9])
+{
+    for(j=[0:9])
+    {
+        if(i%2==0)
+        {
+            if( j%2==0)
+            {
+                translate([dim*j,dim*i,0])
+                color("black")
+                cube(dim);
+                if(i<4 || i>5)
+                {
+                    if(i<4)
+                     {
+                    translate([dim*j+dim/2,dim*i+dim/2,dim])
+                    color("white")
+                    cylinder(h=hauteur,r=dim/2,center=true);
+                     }
+                     else
+                     {
+                         translate([dim*j+dim/2,dim*i+dim/2,dim])
+                    color("DimGray")
+                    cylinder(h=hauteur,r=dim/2,center=true);
+                     }
+                }
+               
+            }
+            else
+            {
+                translate([dim*j,dim*i,0])
+                color("white")
+                cube(dim);
+                
+            }
+        }
+        else
+        {
+             if( j%2!=0)
+            {
+                translate([dim*j,dim*i,0])
+                color("black")
+                cube(dim);
+                if(i<4 || i>5)
+                {
+                     if(i<4)
+                     {
+                    translate([dim*j+dim/2,dim*i+dim/2,dim])
+                    color("white")
+                    cylinder(h=hauteur,r=dim/2,center=true);
+                     }
+                     else
+                     {
+                         translate([dim*j+dim/2,dim*i+dim/2,dim])
+                    color("DimGray")
+                    cylinder(h=hauteur,r=dim/2,center=true);
+                     }
+                }
+            }
+            else
+            {
+                translate([dim*j,dim*i,0])
+                color("white")
+                cube(dim);
+            }
+        }
+    }
+}
